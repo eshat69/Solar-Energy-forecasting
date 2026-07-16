@@ -185,4 +185,3 @@ Interested in:
 
 ---
 
-## ⭐ If you found this project helpful, please give it a Star!
