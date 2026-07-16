@@ -20,10 +20,21 @@ st.write("Predict Solar Energy Generation using the trained XGBoost Model.")
 # ----------------------------
 @st.cache_resource
 def load_files():
-    model = joblib.load("solar_energy_model_xgb.joblib")
-    scaler = joblib.load("scaler.pkl")
+    model_path = "solar_energy_model_xgb.joblib"
+    scaler_path = "scaler.pkl"
+
+    model = joblib.load(model_path)
+    scaler = None
+
+    if os.path.exists(scaler_path):
+        try:
+            scaler = joblib.load(scaler_path)
+        except Exception:
+            scaler = None
+
     return model, scaler
 
+model, scaler = None, None
 try:
     model, scaler = load_files()
 except Exception as e:
@@ -62,13 +73,13 @@ input_df = pd.DataFrame({
     "pressure":[pressure],
     "humidity":[humidity],
     "wind_speed":[wind_speed],
-    "rain_1h":[rain_1h],
-    "snow_1h":[snow_1h],
+    "Rain":[rain_1h],
+    "Snow":[snow_1h],
     "clouds_all":[clouds_all],
     "isSun":[isSun],
     "sunlightTime":[sunlightTime],
     "dayLength":[dayLength],
-    "SunlightTime/daylength":[ratio],
+    "Sunlight_Ratio":[ratio],
     "weather_type":[weather_type],
     "hour":[hour]
 })
@@ -80,12 +91,17 @@ st.dataframe(input_df)
 # Prediction
 # ----------------------------
 if st.button("Predict Solar Energy"):
+    try:
+        if scaler is not None:
+            scaled_input = scaler.transform(input_df)
+            prediction = model.predict(scaled_input)[0]
+        else:
+            # If no scaler is available, try predicting directly from the raw input
+            prediction = model.predict(input_df)[0]
 
-    scaled_input = scaler.transform(input_df)
-
-    prediction = model.predict(scaled_input)[0]
-
-    st.success(f"Predicted Solar Energy: **{prediction:.2f}**")
+        st.success(f"Predicted Solar Energy: **{prediction:.2f}**")
+    except Exception as e:
+        st.error(f"Prediction failed: {e}")
 
 # ----------------------------
 # Footer
