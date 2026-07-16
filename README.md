@@ -89,6 +89,9 @@ Solar-Farm-Forecasting/
 - Random Forest Regressor
 - XGBoost Regressor ✅ (Best Model)
 
+<img width="1779" height="512" alt="64769634-19c3-45c6-aac3-0438b10fff29" src="https://github.com/user-attachments/assets/eae96888-31c1-4f11-bd45-b11fa9e240fb" />
+<img width="984" height="484" alt="f4685924-a3e4-4ffc-8334-a07f384e2e84" src="https://github.com/user-attachments/assets/3f2e5242-4f29-46b2-bac3-f8118e6f9c65" />
+
 ---
 
 ## 📈 Evaluation Metrics
