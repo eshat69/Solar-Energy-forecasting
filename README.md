@@ -102,7 +102,7 @@ Solar-Farm-Forecasting/
 - Root Mean Squared Error (RMSE)
 - 
 <img width="584" height="384" alt="28a37468-edae-4190-a137-eaf181712dea" src="https://github.com/user-attachments/assets/ecde41e5-0c35-45fe-bfa1-cf08c542ea4a" />
-
+<img width="584" height="384" alt="28a37468-edae-4190-a137-eaf181712dea" src="https://github.com/user-attachments/assets/3ea5e76f-e9db-43a3-ad6c-ee255e0e47de" />
 ---
 
 ## ⚙️ Installation
@@ -166,8 +166,6 @@ solar.pbix
 ---
 
 ## Future Improvements
-
-<img width="584" height="384" alt="28a37468-edae-4190-a137-eaf181712dea" src="https://github.com/user-attachments/assets/3ea5e76f-e9db-43a3-ad6c-ee255e0e47de" />
 - Model Explainability (SHAP)
 - Real-time Weather API Integration
 - Cloud Deployment
