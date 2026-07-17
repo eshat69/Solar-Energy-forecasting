@@ -1,3 +1,5 @@
+https://solar-energy-forecasting-eshat.streamlit.app/
+
 # ☀️ Solar Energy Forecasting using Machine Learning
 
 A machine learning project that predicts solar energy generation using weather data. The project compares multiple regression models and deploys the best-performing model using Streamlit.
